@@ -5,11 +5,11 @@ import TopCategories from '../TopCategories/TopCategories';
 
 const Home = () => {
     return (
-        <Container>
+        <>
             <Banner></Banner>
             <TopCategories></TopCategories>
             <h1>home Comming</h1>
-        </Container>
+        </>
     );
 };
 

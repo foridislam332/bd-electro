@@ -1,4 +1,4 @@
-import { Button, Grid, Typography } from '@mui/material';
+import { Button, Container, Grid, Typography } from '@mui/material';
 import { Box } from '@mui/system';
 import React, { useEffect, useState } from 'react';
 import './Banner.scss'
@@ -30,7 +30,7 @@ const Banner = () => {
     }, [])
 
     return (
-        <Box sx={{ mt: 2 }}>
+        <Container sx={{ mt: 2 }}>
             <Grid container spacing={4}>
                 <Grid item xs={12} md={3}>
                     <Categories></Categories>
@@ -71,7 +71,7 @@ const Banner = () => {
                     </Box>
                 </Grid>
             </Grid>
-        </Box>
+        </Container>
     );
 };
 
