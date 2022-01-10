@@ -1,0 +1,19 @@
+.navigation_box{
+    background-color: #7c4cf8 !important;
+    .search_box_input {
+        width: 30rem !important;
+
+        input{
+            padding: 12px 14px;
+            color: #fff;
+        }
+    }
+    
+    .search_btn{
+        padding: 10px !important;
+        border-radius: 0 5px 5px 0 !important;
+        background-color: transparent !important;
+        border: 1px solid #5f3abf;
+        color: #fff;
+    }
+}

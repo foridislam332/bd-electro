@@ -1,0 +1,46 @@
+// color variable
+$primary_color: #ffffff;
+$second_color: #7c4cf8;
+$last_color: rgba(255,255,255,0.4);
+
+.App {
+    background-color: #f1f1f1;
+    .bg_primary{
+        background-color: $primary_color;
+        border-radius: 15px;
+    }
+
+    .btn_Regular{
+        background-image: linear-gradient(to right, #7c4cf8, #8d63f9, #9c78fa, #ab8dfa, #baa2f9) !important;
+        color: #ffffff !important;
+        padding: 8px 20px;
+        position: relative;
+        border-radius: 30px;
+        transition: all .3s ease-in-out;
+        z-index: 999;
+        overflow: hidden;
+        display: inline-block;
+
+        &::after{
+            content: "";
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            top: 0;
+            left: 100%;
+            background-image: linear-gradient(to left, #7c4cf8, #8d63f9, #9c78fa, #ab8dfa, #baa2f9) !important;
+            border-radius: 0;
+            transition: all .2s ease-in-out;
+            z-index: -1;
+        }
+
+        &:hover:after{
+            left: 0;
+        }
+    }
+
+    .price{
+        color: #ed174a;
+        font-weight: bold;
+    }
+}

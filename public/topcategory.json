@@ -1,0 +1,17 @@
+[
+    {
+        "id": "01",
+        "categorie": "Smart Phones",
+        "img": "https://klbtheme.com/machic/wp-content/uploads/2021/09/category-1.jpg"
+    },
+    {
+        "id": "02",
+        "categorie": "Headphones",
+        "img": "https://klbtheme.com/machic/wp-content/uploads/2021/09/category-2.jpg"
+    },
+    {
+        "id": "3",
+        "categorie": "Smartwatches",
+        "img": "https://klbtheme.com/machic/wp-content/uploads/2021/09/category-5.jpg"
+    }
+]

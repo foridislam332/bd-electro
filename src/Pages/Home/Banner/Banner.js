@@ -1,0 +1,78 @@
+import { Button, Grid, Typography } from '@mui/material';
+import { Box } from '@mui/system';
+import React, { useEffect, useState } from 'react';
+import './Banner.scss'
+
+import { Swiper, SwiperSlide } from "swiper/react";
+
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/pagination"
+import "swiper/css/navigation"
+
+
+// import Swiper core and required modules
+import SwiperCore, {
+    Pagination, Navigation
+} from 'swiper';
+import Categories from './Categories/Categories';
+
+// install Swiper modules
+SwiperCore.use([Pagination, Navigation]);
+
+
+const Banner = () => {
+    const [slider, setSlider] = useState([]);
+    useEffect(() => {
+        fetch('./slider.json')
+            .then(res => res.json())
+            .then(data => setSlider(data))
+    }, [])
+
+    return (
+        <Box sx={{ mt: 2 }}>
+            <Grid container spacing={4}>
+                <Grid item xs={12} md={3}>
+                    <Categories></Categories>
+                </Grid>
+                <Grid item xs={12} md={9}>
+                    <Box className="banner_box bg_primary">
+                        <Swiper pagination={{
+                            "type": "progressbar"
+                        }} navigation={true} className="mySwiper">
+                            {
+                                slider.map(slide =>
+                                    <SwiperSlide key={slide.id} data-swiper-autoplay="1000">
+                                        <Grid sx={{ px: 5 }} container spacing={2}>
+                                            <Grid sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }} item xs={6} md={6}>
+                                                <Box className="slide_content">
+                                                    <Typography className="special_offer" variant="h5">Special Offer</Typography>
+
+                                                    <Typography sx={{ py: 1, width: '60%' }} variant="h3">{slide.name}</Typography>
+
+                                                    <Typography sx={{ width: '45%' }} variant="body2">{slide.details.slice(0, 115)}...</Typography>
+
+                                                    <Box className="slide_text_bottom">
+                                                        <span className="price">$ {slide.price}</span>
+                                                        <Button className="btn_Regular">Shop Now</Button>
+                                                    </Box>
+                                                </Box>
+                                            </Grid>
+
+                                            <Grid item xs={6} md={6}>
+                                                <Box className="slide_img">
+                                                    <img style={{ width: '100%' }} src={slide.img} alt="" />
+                                                </Box>
+                                            </Grid>
+                                        </Grid>
+                                    </SwiperSlide>)
+                            }
+                        </Swiper>
+                    </Box>
+                </Grid>
+            </Grid>
+        </Box>
+    );
+};
+
+export default Banner;
