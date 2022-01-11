@@ -17,7 +17,6 @@
             font-size: 18px;
             background: #20b9ff;
             padding: 40px 0;
-          
             display: -webkit-box;
             display: -ms-flexbox;
             display: -webkit-flex;
@@ -30,6 +29,15 @@
             -ms-flex-align: center;
             -webkit-align-items: center;
             align-items: center;
+
+            .offer_style{
+                top: 0;
+                left: 90%;
+                
+                p{
+                    color: #ffffff !important;
+                }
+            }
         
             .swiper-slide img {
                 display: block;

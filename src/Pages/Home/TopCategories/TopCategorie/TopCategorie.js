@@ -4,7 +4,7 @@ import React from 'react';
 import './TopCategorie.scss';
 
 const TopCategorie = ({ item }) => {
-    const { categorie, img } = item;
+    const { categorie, img, discount } = item;
     return (
         <Grid item xs={12} md={4}>
             <Box className="categorie_item">
@@ -12,12 +12,12 @@ const TopCategorie = ({ item }) => {
                     <Grid item xs={6} md={6}>
                         <Box className="categorie_content">
                             <Typography variant="h4">{categorie}</Typography>
-                            <Button className="btn_Regular">Shop Now</Button>
+                            <Button className="btn_regular">Shop Now</Button>
                         </Box>
                     </Grid>
                     <Box className="offer_style">
                         <Typography variant="body2">
-                            <span className="up_span">up to</span> <p>30%</p> <span className="down_span">off</span>
+                            <span className="up_span">up to</span> <p>{discount}%</p> <span className="down_span">off</span>
                         </Typography>
                     </Box>
                     <Grid item xs={6} md={6}>

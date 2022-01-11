@@ -30,7 +30,7 @@ const Banner = () => {
     }, [])
 
     return (
-        <Container sx={{ mt: 2 }}>
+        <Container sx={{ mt: 4 }}>
             <Grid container spacing={4}>
                 <Grid item xs={12} md={3}>
                     <Categories></Categories>
@@ -52,9 +52,15 @@ const Banner = () => {
 
                                                     <Typography sx={{ width: '45%' }} variant="body2">{slide.details.slice(0, 115)}...</Typography>
 
+                                                    <Box className="offer_style">
+                                                        <Typography variant="body2">
+                                                            <span className="up_span">up to</span> <p>{slide.discount}%</p> <span className="down_span">off</span>
+                                                        </Typography>
+                                                    </Box>
+
                                                     <Box className="slide_text_bottom">
                                                         <span className="price">$ {slide.price}</span>
-                                                        <Button className="btn_Regular">Shop Now</Button>
+                                                        <Button className="btn_regular">Shop Now</Button>
                                                     </Box>
                                                 </Box>
                                             </Grid>

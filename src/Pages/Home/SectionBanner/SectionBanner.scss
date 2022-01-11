@@ -1,0 +1,65 @@
+.section_card_banner{
+    background-color: #f852524f !important;
+
+    .card_content{
+        padding: 20px;
+
+        div{
+            color: #fff;
+            font-weight: bold;
+        }
+
+        button{
+            margin: 15px 0 -30px;
+        }
+
+        .discount{
+            text-align: center;
+            background-color: #fba31e;
+            padding: 6px 0;
+            position: relative;
+            top: 50px;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-right: 4px dotted #fff !important;
+            border-left: 4px dotted #fff !important;
+
+            span{
+                font-size: 35px;
+                padding: 0 5px;
+                color: red;
+                font-weight: bold;
+                animation: spanColor 10s infinite;
+            }
+
+            @keyframes spanColor {
+                from{
+                    color: red;
+                }
+                20%{
+                    color: #fff;
+                }
+                60%{
+                    color: #5531f4;
+                }
+                80%{
+                    color: #20b9ff;
+                }
+                to{
+                    color: red;
+                }
+            }
+        }
+    }
+
+    .btn_regular{
+        width: 100%;
+    }
+
+    .sec_banner_img{
+        padding: 70px 30px 10px;
+        background-color: #fff;
+    }
+}

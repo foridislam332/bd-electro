@@ -1,0 +1,89 @@
+.card_container{
+    position: relative;
+    padding-bottom: 0;
+    transform: scale(1);
+    border: 1px solid #845EC2;
+    
+    &:hover{
+        padding-bottom: 115px;
+        border-bottom: 4px solid #845EC2;
+        z-index: 999;
+        box-shadow: 0 5px 15px 0 #7e4ff89c;
+        transition: all .3s ease-in-out;
+    }
+
+    .badge{
+        color: #fff;
+        background-color: #845EC2;
+        padding: 2px 35px;
+        position: absolute;
+        transform: rotate(-45deg);
+        top: 7px;
+        left: -30px;
+        z-index: 999;
+    }
+
+    .img_box{
+        padding: 14px 20px;
+        position: relative;
+
+        img{
+            transition: all .3s ease-in-out;
+            z-index: 5;
+        }
+
+        .hover_img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            transform: scale(.9);
+            opacity: 0;
+        }
+    }
+    
+    .card_title{
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+
+        a{
+            text-decoration: none;
+            color: #000;
+        }
+    }
+
+    .stock{
+        color: #845EC2;
+        font-size: 12px;
+        text-transform: uppercase;
+        font-weight: bold;
+    }
+    
+    .card_action{
+        flex-direction: column;
+        padding: 0 10px;
+        position: absolute;
+        width: 85%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        top: 113%;
+    
+        .btn_regular{
+            width: 100%;
+            margin-bottom: 10px;
+        }
+    }
+
+    &:hover .card_action{
+        top: 88%;
+        transition: all .3s ease-in-out;
+    }
+
+    &:hover img{
+        opacity: 0;
+    }
+
+    &:hover .hover_img{
+        opacity: 1;
+    }
+}

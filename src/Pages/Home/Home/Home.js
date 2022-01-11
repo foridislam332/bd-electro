@@ -1,6 +1,7 @@
 import { Container } from '@mui/material';
 import React from 'react';
 import Banner from '../Banner/Banner';
+import NewProducts from '../NewProducts/NewProducts';
 import TopCategories from '../TopCategories/TopCategories';
 
 const Home = () => {
@@ -8,6 +9,7 @@ const Home = () => {
         <>
             <Banner></Banner>
             <TopCategories></TopCategories>
+            <NewProducts></NewProducts>
             <h1>home Comming</h1>
         </>
     );

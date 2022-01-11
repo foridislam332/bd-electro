@@ -3,23 +3,26 @@
         "id": "01",
         "name": "Stylish headphone",
         "price": 499.99,
-        "offer": "New arrival",
+        "condition": "New arrival",
+        "discount": "25",
         "details": "The Pampas Wireless Over-Ear Headphones from Urbanears feature rich sound reproduction through its 40mm drivers, and a robust built-in battery that can deliver up to 30 hours of playback.",
         "img": "https://i.ibb.co/KV3SsxH/headphone.png"
     },
     {
         "id": "02",
-        "name": "Stylish headphone",
-        "price": 499.99,
-        "offer": "New arrival",
-        "details": "The Pampas Wireless Over-Ear Headphones from Urbanears feature rich sound reproduction through its 40mm drivers, and a robust built-in battery that can deliver up to 30 hours of playback.",
-        "img": "https://i.ibb.co/KV3SsxH/headphone.png"
+        "name": "Realme GT Neo 2",
+        "price": 450.99,
+        "condition": "New arrival",
+        "discount": "17",
+        "details": "50MP AI Camera. All-day Performance. MediaTek Helio G85. 6000mAh Battery.",
+        "img": "https://i.ibb.co/bgxNYvT/slide-1.png"
     },
     {
         "id": "03",
         "name": "Stylish headphone",
         "price": 499.99,
-        "offer": "New arrival",
+        "condition": "New arrival",
+        "discount": "25",
         "details": "The Pampas Wireless Over-Ear Headphones from Urbanears feature rich sound reproduction through its 40mm drivers, and a robust built-in battery that can deliver up to 30 hours of playback.",
         "img": "https://i.ibb.co/KV3SsxH/headphone.png"
     },
@@ -27,7 +30,8 @@
         "id": "04",
         "name": "Stylish headphone",
         "price": 499.99,
-        "offer": "New arrival",
+        "condition": "New arrival",
+        "discount": "25",
         "details": "The Pampas Wireless Over-Ear Headphones from Urbanears feature rich sound reproduction through its 40mm drivers, and a robust built-in battery that can deliver up to 30 hours of playback.",
         "img": "https://i.ibb.co/KV3SsxH/headphone.png"
     },
@@ -35,7 +39,8 @@
         "id": "05",
         "name": "Stylish headphone",
         "price": 499.99,
-        "offer": "New arrival",
+        "condition": "New arrival",
+        "discount": "25",
         "details": "The Pampas Wireless Over-Ear Headphones from Urbanears feature rich sound reproduction through its 40mm drivers, and a robust built-in battery that can deliver up to 30 hours of playback.",
         "img": "https://i.ibb.co/KV3SsxH/headphone.png"
     }
