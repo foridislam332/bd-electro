@@ -14,10 +14,11 @@ import List from '@mui/material/List';
 import Divider from '@mui/material/Divider';
 import ListItem from '@mui/material/ListItem';
 import ListItemText from '@mui/material/ListItemText';
-import MailIcon from '@mui/icons-material/Mail';
 import Badge from '@mui/material/Badge';
 import SearchIcon from '@mui/icons-material/Search';
 import AccountCircle from '@mui/icons-material/AccountCircle';
+import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
+
 import './Navigation.scss';
 
 const Navigation = () => {
@@ -27,7 +28,11 @@ const Navigation = () => {
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'space-between',
-            minHeight: '0 !important'
+            minHeight: '0 !important',
+            background: '#20b9ff !important',
+            [theme.breakpoints.down('sm')]: {
+                display: 'none !important'
+            }
         },
         topBarRight: {
             display: 'flex',
@@ -57,7 +62,11 @@ const Navigation = () => {
         searchBox: {
             display: 'flex',
             alignItems: 'center',
-            justifyContent: 'center'
+            justifyContent: 'center',
+
+            [theme.breakpoints.down('sm')]: {
+                display: 'none !important'
+            }
         }
     })
 
@@ -92,6 +101,17 @@ const Navigation = () => {
         </Box>
     );
 
+    const [navPosition, setnavPosition] = React.useState("static !important");
+    const listenScrollEvent = () => {
+        window.scrollY > 500 ? setnavPosition("fixed !important") : setnavPosition("static !important");
+    };
+    React.useEffect(() => {
+        window.addEventListener("scroll", listenScrollEvent);
+        return () => {
+            window.removeEventListener("scroll", listenScrollEvent);
+        };
+    }, []);
+
     return (
         <>
             {/* top navbar */}
@@ -100,49 +120,67 @@ const Navigation = () => {
                     <Toolbar className={topBar}>
                         <Box>
                             <Typography variant="body2" sx={{ flexGrow: 1 }}>
-                                Need help? Call Us: + 0020 500
+                                Need help? Call Us: + 020 500-660
                             </Typography>
                         </Box>
                         <Box className={topBarRight}>
                             <Typography variant="body2" sx={{ flexGrow: 1, px: 2, borderRight: '1px solid #fff' }}>
-                                Help
+                                <Link className={navLink} to="/">Help</Link>
                             </Typography>
                             <Typography variant="body2" sx={{ flexGrow: 1, px: 2, borderRight: '1px solid #fff' }}>
-                                Language
+                                <Link className={navLink} to="/">Language</Link>
                             </Typography>
                             <Typography variant="body2" sx={{ flexGrow: 1, px: 2, borderRight: '1px solid #fff' }}>
-                                Wishlist
+                                <Link className={navLink} to="/">Wishlist</Link>
                             </Typography>
                             <Tooltip title={
                                 <React.Fragment>
-                                    <Typography color="inherit">Welcome TO BD-Electro</Typography>
-                                    <Typography color="inherit">Profile</Typography>
+                                    <Box className="account_top">
+                                        <Typography variant="h6">Welcome To BD-Electro</Typography>
+                                        <Box className="user_icon">
+                                            <AccountCircle />
+                                            <Typography variant="h6">MD Forid Hossain</Typography>
+                                        </Box>
+                                        <Box className="account_btn">
+                                            <Button>Join</Button>
+                                            <Button>Sign In</Button>
+                                        </Box>
+                                    </Box>
+                                    <Typography color="inherit">
+                                        <Link className={navLink} to="/">My Account</Link>
+                                    </Typography>
+                                    <Typography color="inherit">
+                                        <Link className={navLink} to="/">My Orders</Link>
+                                    </Typography>
+                                    <Typography color="inherit">
+                                        <Link className={navLink} to="/">View Cart</Link>
+                                    </Typography>
                                 </React.Fragment>
                             }>
-                                <Box className={topBarRight}>
-                                    <IconButton
-                                        size="large"
-                                        aria-label="account of current user"
-                                        aria-controls="menu-appbar"
-                                        aria-haspopup="true"
-                                        color="inherit"
-                                    >
-                                        <AccountCircle />
-                                    </IconButton>
-                                    <Typography variant="body2" component="div" sx={{ flexGrow: 1 }}>
-                                        Account
-                                    </Typography>
-                                </Box>
-
+                                <Link className={navLink} to="/myAccount">
+                                    <Box className={topBarRight}>
+                                        <IconButton
+                                            size="large"
+                                            aria-label="account of current user"
+                                            aria-controls="menu-appbar"
+                                            aria-haspopup="true"
+                                            color="inherit"
+                                        >
+                                            <AccountCircle />
+                                        </IconButton>
+                                        <Typography variant="body2" component="div" sx={{ flexGrow: 1 }}>
+                                            Account
+                                        </Typography>
+                                    </Box>
+                                </Link>
                             </Tooltip>
-
                         </Box>
                     </Toolbar>
                 </AppBar>
             </Box>
             {/* main navbar */}
             <Box sx={{ flexGrow: 1 }}>
-                <AppBar className="navigation_box" position="static">
+                <AppBar sx={{ position: navPosition }} className="navigation_box">
                     <Container>
                         <Toolbar className={navBar}>
                             <Box>
@@ -160,7 +198,7 @@ const Navigation = () => {
                                 <span>$ 00:00</span>
                                 <IconButton size="large" aria-label="show 4 new mails" color="inherit">
                                     <Badge badgeContent={4} color="error">
-                                        <MailIcon />
+                                        <ShoppingCartOutlinedIcon />
                                     </Badge>
                                 </IconButton>
                             </Box>
