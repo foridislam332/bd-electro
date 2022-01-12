@@ -89,20 +89,30 @@
 }
 
 .modal_carousel{
-    position: relative;
+    position: relative !important;
 
     .carousel_img{
-        padding: 0 0 0 66px;
+        padding: 0 0 0 66px !important;
     }
 
-    .makeStyles-indicators-22 {   
-        position: absolute;
-        width: 80px;
-        top: 50%;
-        left: 32px;
-        z-index: 99;
-        transform: translate(-50%, -50%);
-        background-color: #fff;
+    .carousel_main {   
+        button{
+            position: absolute !important;
+            width: 80px !important;
+            top: 50% !important;
+            left: 32px !important;
+            z-index: 99 !important;
+            transform: translate(-50%, -50%) !important;
+            background-color: #fff !important;
+
+        }
+
+        button:first-child{
+            top: 24% !important;
+        }
+        button:last-child{
+            top: 75% !important;
+        }
     }
 
     .makeStyles-indicator-23:hover{
@@ -110,7 +120,7 @@
     }
 
     .makeStyles-next-32{
-        display: none;
+        display: none !important;
     }
 }
 
@@ -119,10 +129,24 @@
     a{
         text-decoration: none;
     }
+
+    .rating_box{
+        display: flex;
+        align-items: center;
+    
+        span{
+            color: #ef2626 !important;
+        }
+    
+        .star_count{
+            margin-left: 5px !important;
+            margin-bottom: 2px !important;
+        }
+    }
     
     .price_box{
-        margin-top: 10px;
-        background-color: #ef2626;
+        margin-top: 10px !important;
+        background-color: #ef2626 !important;
         border-right: 4px dotted #fff;
         border-left: 4px dotted #fff;
         padding: 10px 0;
@@ -159,10 +183,23 @@
         align-items: center;
         justify-content: space-between;
     
-        input{
-            width: 50px;
-            text-align: center;
-            padding: 10px 0;
+        .quantity_box{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        
+            button{
+                padding: 0;
+                min-width: 0;
+            }
+        
+            input{
+                width: 40px;
+                font-size: 20px;
+                text-align: center;
+                padding: 4px 0;
+                border: none;
+            }
         }
     }
 }

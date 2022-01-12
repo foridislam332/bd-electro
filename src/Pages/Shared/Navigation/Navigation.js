@@ -20,6 +20,7 @@ import AccountCircle from '@mui/icons-material/AccountCircle';
 import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 
 import './Navigation.scss';
+import { useSelector } from 'react-redux';
 
 const Navigation = () => {
     const theme = useTheme();
@@ -112,6 +113,17 @@ const Navigation = () => {
         };
     }, []);
 
+    const cartProducts = useSelector(state => state.product.cart)
+    const [cartCount, setCartCount] = React.useState(0);
+
+    React.useEffect(() => {
+        let count = 0;
+        cartProducts.forEach(product => {
+            count += product.quan;
+        });
+        setCartCount(count);
+    }, [cartProducts, cartCount])
+
     return (
         <>
             {/* top navbar */}
@@ -196,11 +208,13 @@ const Navigation = () => {
 
                             <Box className={nvaMenu}>
                                 <span>$ 00:00</span>
-                                <IconButton size="large" aria-label="show 4 new mails" color="inherit">
-                                    <Badge badgeContent={4} color="error">
-                                        <ShoppingCartOutlinedIcon />
-                                    </Badge>
-                                </IconButton>
+                                <Link className={navLink} to="/carts">
+                                    <IconButton size="large" aria-label="show 4 new mails" color="inherit">
+                                        <Badge badgeContent={cartCount} color="error">
+                                            <ShoppingCartOutlinedIcon />
+                                        </Badge>
+                                    </IconButton>
+                                </Link>
                             </Box>
 
                             <IconButton

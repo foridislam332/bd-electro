@@ -1,0 +1,28 @@
+.cart_text{
+    display: flex;
+    align-items: center;
+
+    img{
+        padding: 0 10px;
+    }
+
+}
+
+.quantity_box{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    button{
+        padding: 0;
+        min-width: 0;
+    }
+
+    input{
+        width: 40px;
+        font-size: 20px;
+        text-align: center;
+        padding: 4px 0;
+        border: none;
+    }
+}

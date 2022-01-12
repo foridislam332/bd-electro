@@ -1,16 +1,18 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import { Grid, Modal, Rating } from '@mui/material';
-import './Product.scss';
 import { Box } from '@mui/system';
 import { Link } from 'react-router-dom';
 import Carousel from 'react-material-ui-carousel'
 import RemoveCircleOutlineIcon from '@mui/icons-material/RemoveCircleOutline';
 import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
+import { useDispatch } from 'react-redux';
+import { addToCart } from '../../redux/actions/cartProductAction';
+import './Product.scss';
 
 const Product = ({ product }) => {
     const { id, name, price, listPrice, star, condition, img, img2, img3, description } = product;
@@ -32,10 +34,12 @@ const Product = ({ product }) => {
     const handleClose = () => setOpen(false);
 
     const ind = [
-        <img style={{ width: '100%' }} src={img} />,
-        <img style={{ width: '100%' }} src={img2} />,
-        <img style={{ width: '100%' }} src={img3} />
+        <img style={{ width: '100%' }} src={img} alt={name} />,
+        <img style={{ width: '100%' }} src={img2} alt={name} />,
+        <img style={{ width: '100%' }} src={img3} alt={name} />
     ];
+
+    const dispatch = useDispatch();
 
     return (
         <>
@@ -73,7 +77,7 @@ const Product = ({ product }) => {
                         <span className="price">$ {price}</span>
                     </CardContent>
                     <Box className="card_action">
-                        <Button className="btn_regular">Add To Cart</Button>
+                        <Button onClick={() => dispatch(addToCart(id))} className="btn_regular">Add To Cart</Button>
                         <Button onClick={handleOpen} className="btn_regular">Quick</Button>
                     </Box>
                 </Card>
@@ -89,7 +93,7 @@ const Product = ({ product }) => {
                     <Grid container spacing={4}>
                         <Grid item xs={12} md={6}>
                             <Box className="modal_carousel">
-                                <Carousel autoPlay={false} IndicatorIcon={ind}>
+                                <Carousel className="carousel_main" autoPlay={false} IndicatorIcon={ind}>
                                     <Box className="carousel_img">
                                         <Link to={url}>
                                             <img style={{ width: '100%' }} src={img} alt={name} />
@@ -127,12 +131,12 @@ const Product = ({ product }) => {
                                 </Box>
 
                                 <Box className="action_box">
-                                    <Box>
+                                    <Box className="quantity_box">
                                         <Button><RemoveCircleOutlineIcon /></Button>
                                         <input type="text" value="1" />
                                         <Button><AddCircleOutlineIcon /></Button>
                                     </Box>
-                                    <Button className="btn_regular">Add To Cart</Button>
+                                    <Button onClick={() => dispatch(addToCart(id))} className="btn_regular">Add To Cart</Button>
                                 </Box>
 
                                 <Typography variant="body2" sx={{ mt: 2 }}>
