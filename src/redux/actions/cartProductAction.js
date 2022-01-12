@@ -18,6 +18,7 @@ export const removeProduct = (productId) => {
 }
 
 export const updateQuantity = (productId, value) => {
+    console.log(productId, value)
     return {
         type: 'UPDATE_PRODUCT_QUANTITY',
         payload: {
@@ -27,11 +28,9 @@ export const updateQuantity = (productId, value) => {
     }
 }
 
-export const currentProduct = (productId) => {
+export const currentProduct = (product) => {
     return {
         type: 'CURRENT_PRODUCT',
-        payload: {
-            id: productId
-        }
+        payload: product
     }
 }

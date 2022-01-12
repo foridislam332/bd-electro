@@ -1,0 +1,41 @@
+.cart_summary{
+    background-color: #ae70d5;
+    color: #fff;
+
+    h5{
+        border-bottom: 1px solid rebeccapurple;
+        padding-bottom: 8px;
+        margin-bottom: 20px;
+    }
+    .cart_item{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .sub_total{
+        margin-bottom: 4px;
+    }
+
+    .total{
+        border-top: 1px solid rebeccapurple;
+        margin-top: 10px;
+        padding-bottom: 20px;
+    }
+
+}
+.cart_calculate{
+
+    .cart_action{
+        background-color: #f852524f;
+
+        a{
+            display: block;
+            text-decoration: none;
+            width: 100%;
+        }
+        .btn_regular{
+            width: 100%;
+        }
+    }
+}

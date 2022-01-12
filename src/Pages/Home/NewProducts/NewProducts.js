@@ -1,12 +1,11 @@
 import { Container, Grid } from '@mui/material';
 import { Box } from '@mui/system';
 import React, { useEffect, useState } from 'react';
+import { useSelector } from 'react-redux';
 import Product from '../../Product/Product';
 import SectionBanner from '../SectionBanner/SectionBanner';
 
 const NewProducts = () => {
-    // const products = useSelector(state => state.product.products)
-
     const [products, setProducts] = useState([]);
 
     useEffect(() => {
@@ -14,8 +13,6 @@ const NewProducts = () => {
             .then(res => res.json())
             .then(data => setProducts(data))
     }, [])
-
-    console.log(products)
 
     return (
         <Box sx={{ px: 4, mt: 12 }}>

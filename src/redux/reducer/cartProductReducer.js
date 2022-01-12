@@ -2,7 +2,8 @@ import products from '../../fakeData/products.json'
 
 const initialstate = {
     products: products,
-    cart: []
+    cart: [],
+    currentProcuct: null
 }
 
 
@@ -27,7 +28,12 @@ const cartProductReducer = (state = initialstate, action) => {
         }
 
         case 'UPDATE_PRODUCT_QUANTITY': {
-            const newState = { ...state, cart: state.cart.map(product => product._id === action.payload.id ? { ...product, quan: + action.payload.quan } : product) }
+            const newState = { ...state, cart: state.cart.map((product) => product.id === action.payload.id ? { ...product, quan: +action.payload.quan } : product) }
+            return newState;
+        }
+
+        case 'CURRENT_PRODUCT': {
+            const newState = { ...state, currentProcuct: action.payload }
             return newState;
         }
 

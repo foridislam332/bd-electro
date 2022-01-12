@@ -5,8 +5,8 @@ import RemoveCircleOutlineIcon from '@mui/icons-material/RemoveCircleOutline';
 import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
 import DeleteForeverOutlinedIcon from '@mui/icons-material/DeleteForeverOutlined';
 import './Cart.scss';
-import { useDispatch } from 'react-redux';
-import { removeProduct } from '../../../redux/actions/cartProductAction';
+import { useDispatch, useSelector } from 'react-redux';
+import { removeProduct, updateQuantity } from '../../../redux/actions/cartProductAction';
 
 const Cart = ({ product }) => {
     const { id, name, img, quan, price } = product;
@@ -18,6 +18,12 @@ const Cart = ({ product }) => {
         setTotalPrice(multulyPrice.toFixed(2));
     }, [quan, price])
 
+    const [input, setInput] = useState(product.quan);
+
+    const onChangeHandler = (e) => {
+        setInput(e.target.value);
+        dispatch(updateQuantity(product.id, e.target.value));
+    };
 
     return (
         <TableRow sx={{ '&:last-child td, &:last-child th': { border: 0 } }}>
@@ -30,9 +36,7 @@ const Cart = ({ product }) => {
             <TableCell align="center">$ {price}</TableCell>
             <TableCell align="center">
                 <Box className="quantity_box">
-                    <Button><RemoveCircleOutlineIcon /></Button>
-                    <input type="text" value={quan} />
-                    <Button><AddCircleOutlineIcon /></Button>
+                    <input onChange={onChangeHandler} min="1" type="number" value={input} />
                 </Box>
             </TableCell>
             <TableCell align="center">$ {totalPrice}</TableCell>

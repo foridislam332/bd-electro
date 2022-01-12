@@ -9,20 +9,12 @@
 }
 
 .quantity_box{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    button{
-        padding: 0;
-        min-width: 0;
-    }
-
     input{
-        width: 40px;
+        width: 50px;
         font-size: 20px;
         text-align: center;
-        padding: 4px 0;
-        border: none;
+        padding: 5px 4px;
+        border-radius: 10px;
+        border: 1px solid #845EC2;
     }
 }

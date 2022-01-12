@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
@@ -8,10 +8,8 @@ import { Grid, Modal, Rating } from '@mui/material';
 import { Box } from '@mui/system';
 import { Link } from 'react-router-dom';
 import Carousel from 'react-material-ui-carousel'
-import RemoveCircleOutlineIcon from '@mui/icons-material/RemoveCircleOutline';
-import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
 import { useDispatch } from 'react-redux';
-import { addToCart } from '../../redux/actions/cartProductAction';
+import { addToCart, updateQuantity } from '../../redux/actions/cartProductAction';
 import './Product.scss';
 
 const Product = ({ product }) => {
@@ -38,7 +36,6 @@ const Product = ({ product }) => {
         <img style={{ width: '100%' }} src={img2} alt={name} />,
         <img style={{ width: '100%' }} src={img3} alt={name} />
     ];
-
     const dispatch = useDispatch();
 
     return (
@@ -132,11 +129,11 @@ const Product = ({ product }) => {
 
                                 <Box className="action_box">
                                     <Box className="quantity_box">
-                                        <Button><RemoveCircleOutlineIcon /></Button>
-                                        <input type="text" value="1" />
-                                        <Button><AddCircleOutlineIcon /></Button>
+                                        <Button onClick={() => dispatch(addToCart(id))} className="btn_regular">Add To Cart</Button>
                                     </Box>
-                                    <Button onClick={() => dispatch(addToCart(id))} className="btn_regular">Add To Cart</Button>
+                                    <Link to={url}>
+                                        <Button className="btn_regular">Details</Button>
+                                    </Link>
                                 </Box>
 
                                 <Typography variant="body2" sx={{ mt: 2 }}>
