@@ -1,4 +1,3 @@
-import { Container } from '@mui/material';
 import React from 'react';
 import Banner from '../Banner/Banner';
 import NewProducts from '../NewProducts/NewProducts';

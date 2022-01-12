@@ -75,4 +75,18 @@ $last_color: rgba(255,255,255,0.4);
         font-weight: bold;
         display: block;
     }
+
+    .rating_box{
+        display: flex;
+        align-items: center;
+    
+        span{
+            color: #ef2626;
+        }
+    
+        .star_count{
+            margin-left: 5px;
+            margin-bottom: 2px;
+        }
+    }
 }

@@ -17,7 +17,7 @@ const NewProducts = () => {
         <Box sx={{ px: 4, mt: 12 }}>
             <Container>
                 <Box className="section_title">
-                    <h1>New Product</h1>
+                    <h1>New Products</h1>
                     <br />
                     <p>New products with updated stocks</p>
                 </Box>
