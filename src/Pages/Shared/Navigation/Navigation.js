@@ -124,6 +124,36 @@ const Navigation = () => {
         setCartCount(count);
     }, [cartProducts, cartCount])
 
+    const [totalPrice, setTotalPrice] = React.useState(0);
+    const [totalItems, setTotalItems] = React.useState(0);
+    const [deliveryCharge, setDeliveryCharge] = React.useState(0);
+    const [grandTotal, setGrandTotal] = React.useState(0);
+
+    React.useEffect(() => {
+        let items = 0;
+        let price = 0;
+        let delivery = 60;
+
+        cartProducts.forEach((item) => {
+            items += item.quan;
+            price += item.quan * item.price + delivery;
+        });
+
+        if (price >= 500) {
+            delivery = 50;
+        }
+
+        if (price >= 1000) {
+            delivery = 20;
+        }
+
+        setTotalItems(items);
+        setTotalPrice(price);
+        setDeliveryCharge(delivery)
+        setGrandTotal(price + delivery)
+
+    }, [cartProducts, totalPrice, totalItems, setTotalPrice, setTotalItems]);
+
     return (
         <>
             {/* top navbar */}
@@ -207,7 +237,7 @@ const Navigation = () => {
                             </Box>
 
                             <Box className={nvaMenu}>
-                                <span>$ 00:00</span>
+                                <span>$ {grandTotal.toFixed(2)}</span>
                                 <Link className={navLink} to="/carts">
                                     <IconButton size="large" aria-label="show 4 new mails" color="inherit">
                                         <Badge badgeContent={cartCount} color="error">
