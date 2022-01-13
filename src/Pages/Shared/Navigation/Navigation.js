@@ -195,7 +195,7 @@ const Navigation = () => {
                                         <Link className={navLink} to="/">My Orders</Link>
                                     </Typography>
                                     <Typography color="inherit">
-                                        <Link className={navLink} to="/">View Cart</Link>
+                                        <Link className={navLink} to="/carts">View Cart</Link>
                                     </Typography>
                                 </React.Fragment>
                             }>
