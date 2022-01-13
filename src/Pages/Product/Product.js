@@ -11,10 +11,12 @@ import Carousel from 'react-material-ui-carousel'
 import { useDispatch } from 'react-redux';
 import { addToCart, updateQuantity } from '../../redux/actions/cartProductAction';
 import './Product.scss';
+import useAuth from '../../Hooks/useAuth';
 
 const Product = ({ product }) => {
     const { id, name, price, listPrice, star, condition, img, img2, img3, description } = product;
     const url = `/home/:${id}`;
+    const { user } = useAuth();
 
     const style = {
         position: 'absolute',
@@ -74,7 +76,13 @@ const Product = ({ product }) => {
                         <span className="price">$ {price}</span>
                     </CardContent>
                     <Box className="card_action">
-                        <Button onClick={() => dispatch(addToCart(id))} className="btn_regular">Add To Cart</Button>
+                        {
+                            user.email ? <Button onClick={() => dispatch(addToCart(id))} className="btn_regular">Add To Cart</Button>
+                                :
+                                <Link to="/login">
+                                    <Button className="btn_regular">Add To Cart</Button>
+                                </Link>
+                        }
                         <Button onClick={handleOpen} className="btn_regular">Quick</Button>
                     </Box>
                 </Card>
@@ -129,7 +137,13 @@ const Product = ({ product }) => {
 
                                 <Box className="action_box">
                                     <Box className="quantity_box">
-                                        <Button onClick={() => dispatch(addToCart(id))} className="btn_regular">Add To Cart</Button>
+                                        {
+                                            user.email ? <Button onClick={() => dispatch(addToCart(id))} className="btn_regular">Add To Cart</Button>
+                                                :
+                                                <Link to="/login">
+                                                    <Button className="btn_regular">Add To Cart</Button>
+                                                </Link>
+                                        }
                                     </Box>
                                     <Link to={url}>
                                         <Button className="btn_regular">Details</Button>

@@ -67,6 +67,10 @@
         left: 50%;
         transform: translate(-50%, -50%);
         top: 113%;
+
+        a{
+            text-decoration: none !important;
+        }
     
         .btn_regular{
             width: 100%;

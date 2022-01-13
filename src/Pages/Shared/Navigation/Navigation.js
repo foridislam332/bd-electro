@@ -21,6 +21,7 @@ import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 
 import './Navigation.scss';
 import { useSelector } from 'react-redux';
+import useAuth from '../../../Hooks/useAuth';
 
 const Navigation = () => {
     const theme = useTheme();
@@ -154,6 +155,7 @@ const Navigation = () => {
 
     }, [cartProducts, totalPrice, totalItems, setTotalPrice, setTotalItems]);
 
+    const { user, logOut } = useAuth();
     return (
         <>
             {/* top navbar */}
@@ -181,12 +183,15 @@ const Navigation = () => {
                                         <Typography variant="h6">Welcome To BD-Electro</Typography>
                                         <Box className="user_icon">
                                             <AccountCircle />
-                                            <Typography variant="h6">MD Forid Hossain</Typography>
+                                            <Typography variant="h6">{user.displayName}</Typography>
                                         </Box>
-                                        <Box className="account_btn">
-                                            <Button>Join</Button>
-                                            <Button>Sign In</Button>
-                                        </Box>
+                                        {
+                                            user.email ? <Box className="logout_btn"><Button onClick={logOut}>Sign Out</Button></Box> :
+                                                <Box className="account_btn">
+                                                    < Link className={navLink} to="/register"><Button>Join</Button></Link>
+                                                    <Link className={navLink} to="/login"><Button>Sign In</Button></Link>
+                                                </Box>
+                                        }
                                     </Box>
                                     <Typography color="inherit">
                                         <Link className={navLink} to="/">My Account</Link>
