@@ -15,12 +15,17 @@ const CheckOut = () => {
     React.useEffect(() => {
         let items = 0;
         let price = 0;
-        let delivery = 60;
+        let delivery = 0;
 
         carts.forEach((item) => {
             items += item.quan;
             price += item.quan * item.price + delivery;
         });
+
+        if (price >= 1) {
+            delivery = 60;
+        }
+
 
         if (price >= 500) {
             delivery = 50;

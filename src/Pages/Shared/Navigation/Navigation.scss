@@ -18,6 +18,18 @@
     }
 }
 
+.logout_btn{
+    width: 100% !important;
+
+    button{
+        width: 100%;
+        border: 1px solid #fff;
+        background: #f75656;
+        color: #fff;
+        text-transform: capitalize;
+    }
+}
+
 .css-ja5taz-MuiTooltip-tooltip{
     padding: 15px !important;
     background-color: #ae70d5 !important;

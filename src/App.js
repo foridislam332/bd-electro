@@ -6,6 +6,7 @@ import CheckOut from './Pages/CheckOut/CheckOut';
 import Home from './Pages/Home/Home/Home';
 import Login from './Pages/Login/Login/Login';
 import Register from './Pages/Login/Register/Register';
+import PrivateRoute from './Pages/PrivateRoute/PrivateRoute';
 import Navigation from './Pages/Shared/Navigation/Navigation';
 
 function App() {
@@ -18,8 +19,16 @@ function App() {
                         <Route exact path="/" element={<Home />} />
                         <Route path="/home" element={<Home />} />
                         <Route path="/home/:productId" element={<Home />} />
-                        <Route path="/carts" element={<Carts />} />
-                        <Route path="/checkout" element={<CheckOut />} />
+                        <Route path="/carts" element={
+                            <PrivateRoute>
+                                <Carts />
+                            </PrivateRoute>
+                        } />
+                        <Route path="/checkout" element={
+                            <PrivateRoute>
+                                <CheckOut />
+                            </PrivateRoute>
+                        } />
                         <Route path="/login" element={<Login />} />
                         <Route path="/register" element={<Register />} />
                     </Routes>
