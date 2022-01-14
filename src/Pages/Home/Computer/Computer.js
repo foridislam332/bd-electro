@@ -4,9 +4,9 @@ import { Box } from '@mui/system';
 import Product from '../../Product/Product';
 import SectionBanner from '../SectionBanner/SectionBanner';
 
-const SmartWatch = () => {
+const Computer = () => {
     const [products, setProducts] = useState([]);
-    const [watch, setWatch] = useState([]);
+    const [computer, setComputer] = useState([]);
 
     useEffect(() => {
         fetch('./products.json')
@@ -15,17 +15,16 @@ const SmartWatch = () => {
     }, [])
 
     useEffect(() => {
-        const newData = products.filter(product => product.category === "smartwatch");
-        setWatch(newData);
+        const newData = products.filter(product => product.category === "computer");
+        setComputer(newData);
     }, [products])
-
     return (
         <Box sx={{ px: 4 }}>
             <Container>
                 <Box className="section_title">
-                    <h1>Smart Watches</h1>
+                    <h1>Desktop & Laptop</h1>
                     <br />
-                    <p>Smart Watches with updated stocks</p>
+                    <p>Desktop & Laptop with updated stocks</p>
                 </Box>
             </Container>
             <Box>
@@ -36,7 +35,7 @@ const SmartWatch = () => {
                     <Grid item xs={12} md={9}>
                         <Grid container spacing={1}>
                             {
-                                watch.slice(0, 4).map(product => <Product
+                                computer.slice(0, 4).map(product => <Product
                                     key={product.id}
                                     product={product}
                                 ></Product>)
@@ -49,4 +48,4 @@ const SmartWatch = () => {
     );
 };
 
-export default SmartWatch;
+export default Computer;

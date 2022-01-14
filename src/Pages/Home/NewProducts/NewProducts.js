@@ -17,7 +17,7 @@ const NewProducts = () => {
     return (
         <Box sx={{ px: 4, mt: 12 }}>
             <Container>
-                <Box className="section_title">
+                <Box sx={{ textAlign: 'right' }} className="section_title">
                     <h1>New Products</h1>
                     <br />
                     <p>New products with updated stocks</p>
@@ -28,7 +28,7 @@ const NewProducts = () => {
                     <Grid item xs={12} md={9}>
                         <Grid container spacing={1}>
                             {
-                                products.map(product => <Product
+                                products.slice(0, 4).map(product => <Product
                                     key={product.id}
                                     product={product}
                                 ></Product>)

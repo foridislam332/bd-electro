@@ -4,9 +4,9 @@ import { Box } from '@mui/system';
 import Product from '../../Product/Product';
 import SectionBanner from '../SectionBanner/SectionBanner';
 
-const SmartWatch = () => {
+const Phone = () => {
     const [products, setProducts] = useState([]);
-    const [watch, setWatch] = useState([]);
+    const [phone, setPhone] = useState([]);
 
     useEffect(() => {
         fetch('./products.json')
@@ -15,33 +15,32 @@ const SmartWatch = () => {
     }, [])
 
     useEffect(() => {
-        const newData = products.filter(product => product.category === "smartwatch");
-        setWatch(newData);
+        const newData = products.filter(product => product.category === "smartphone");
+        setPhone(newData);
     }, [products])
-
     return (
         <Box sx={{ px: 4 }}>
             <Container>
-                <Box className="section_title">
-                    <h1>Smart Watches</h1>
+                <Box sx={{ textAlign: 'right' }} className="section_title">
+                    <h1>Smart Phones</h1>
                     <br />
-                    <p>Smart Watches with updated stocks</p>
+                    <p>Smart Phones with updated stocks</p>
                 </Box>
             </Container>
             <Box>
                 <Grid container spacing={2}>
-                    <Grid item xs={12} sm={6} md={3}>
-                        <SectionBanner></SectionBanner>
-                    </Grid>
                     <Grid item xs={12} md={9}>
                         <Grid container spacing={1}>
                             {
-                                watch.slice(0, 4).map(product => <Product
+                                phone.slice(0, 4).map(product => <Product
                                     key={product.id}
                                     product={product}
                                 ></Product>)
                             }
                         </Grid>
+                    </Grid>
+                    <Grid item xs={12} sm={6} md={3}>
+                        <SectionBanner></SectionBanner>
                     </Grid>
                 </Grid>
             </Box>
@@ -49,4 +48,4 @@ const SmartWatch = () => {
     );
 };
 
-export default SmartWatch;
+export default Phone;

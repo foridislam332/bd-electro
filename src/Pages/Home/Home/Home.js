@@ -1,6 +1,9 @@
 import React from 'react';
 import Banner from '../Banner/Banner';
+import Computer from '../Computer/Computer';
+import Headheadphone from '../Headphone/Headphone';
 import NewProducts from '../NewProducts/NewProducts';
+import Phone from '../Phone/Phone';
 import SmartWatch from '../SmartWatch/SmartWatch';
 import TopCategories from '../TopCategories/TopCategories';
 
@@ -11,7 +14,9 @@ const Home = () => {
             <TopCategories></TopCategories>
             <NewProducts></NewProducts>
             <SmartWatch></SmartWatch>
-            <h1>home Comming</h1>
+            <Phone></Phone>
+            <Computer></Computer>
+            <Headheadphone></Headheadphone>
         </>
     );
 };
