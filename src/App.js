@@ -8,6 +8,7 @@ import Login from './Pages/Login/Login/Login';
 import Register from './Pages/Login/Register/Register';
 import PrivateRoute from './Pages/PrivateRoute/PrivateRoute';
 import Navigation from './Pages/Shared/Navigation/Navigation';
+import SingleProduct from './Pages/SingleProduct/SingleProduct';
 
 function App() {
     return (
@@ -18,7 +19,7 @@ function App() {
                     <Routes>
                         <Route exact path="/" element={<Home />} />
                         <Route path="/home" element={<Home />} />
-                        <Route path="/home/:productId" element={<Home />} />
+                        <Route path="/product/:productId" element={<SingleProduct />} />
                         <Route path="/carts" element={
                             <PrivateRoute>
                                 <Carts />

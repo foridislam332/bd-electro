@@ -9,13 +9,13 @@ import { Box } from '@mui/system';
 import { Link } from 'react-router-dom';
 import Carousel from 'react-material-ui-carousel'
 import { useDispatch } from 'react-redux';
-import { addToCart, updateQuantity } from '../../redux/actions/cartProductAction';
+import { addToCart } from '../../redux/actions/cartProductAction';
 import './Product.scss';
 import useAuth from '../../Hooks/useAuth';
 
 const Product = ({ product }) => {
     const { id, name, price, listPrice, star, condition, img, img2, img3, description } = product;
-    const url = `/home/:${id}`;
+    const url = `/product/${id}`;
     const { user } = useAuth();
 
     const style = {

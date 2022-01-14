@@ -1,0 +1,40 @@
+.product_details{
+    .price_box{
+        display: flex;
+        margin: 20px 0 40px !important;
+    
+        span{
+            color: #fff !important;
+        }
+
+        .price{
+            position: relative;
+            margin-bottom: 17px;
+            top: 14px;
+            font-weight: 400 !important;
+        }
+    }
+
+    .action_box{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        p{
+            margin: 0;
+            font-weight: bold;
+        }
+    }
+
+    .carousel_main button:first-child {
+        top: 30% !important;
+    }
+
+    .carousel_main button:last-child {
+        top: 70% !important;
+    }
+
+    .carousel_img {
+        padding: 0 0 0 75px !important;
+    }
+}
