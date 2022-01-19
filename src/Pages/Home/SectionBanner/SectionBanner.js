@@ -5,25 +5,25 @@ import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import { Box } from '@mui/material';
-
 import './SectionBanner.scss';
 
-const SectionBanner = () => {
+const SectionBanner = ({ item }) => {
+    const { name, img, description, discount } = item;
     return (
         <>
             <Card className="section_card_banner">
                 <CardContent className="card_content">
                     <Typography gutterBottom variant="h5" component="div">
-                        DJI Mavic Mini - Drone
+                        {name}
                     </Typography>
                     <Typography variant="body2" color="text.secondary">
-                        DJI Mavic Mini - Drone FlyCam Quadcopter UAV with 2.7K Camera 3-Axis Gimbal GPS 30min Flight Time, less than 0.55lbs, Gray
+                        {description}
                     </Typography>
 
                     <Button className="btn_regular">Shop Now</Button>
 
                     <Typography className="discount" variant="h6" component="div">
-                        Up To <span>15%</span> Discount
+                        Up To <span>{discount}%</span> Discount
                     </Typography>
                 </CardContent>
 
@@ -32,7 +32,7 @@ const SectionBanner = () => {
                         component="img"
                         alt="green iguana"
                         width="100%"
-                        image="https://i.ibb.co/n8DMwk5/drone.jpg"
+                        image={img}
                     />
                 </Box>
             </Card>

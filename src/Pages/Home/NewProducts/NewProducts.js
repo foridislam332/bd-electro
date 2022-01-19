@@ -6,12 +6,13 @@ import SectionBanner from '../SectionBanner/SectionBanner';
 import Product from '../../Product/Product';
 
 const NewProducts = () => {
-    const [products, setProducts] = useState([]);
+    const products = useSelector(state => state.product.products);
+    const [banner, setBanner] = useState([]);
 
     useEffect(() => {
-        fetch('./products.json')
+        fetch('./sectionbanner.json')
             .then(res => res.json())
-            .then(data => setProducts(data))
+            .then(data => setBanner(data))
     }, [])
 
     return (
@@ -37,7 +38,12 @@ const NewProducts = () => {
                     </Grid>
 
                     <Grid item xs={12} sm={6} md={3}>
-                        <SectionBanner></SectionBanner>
+                        {
+                            banner.slice(0, 1).map(item => <SectionBanner
+                                key={item.id}
+                                item={item}
+                            ></SectionBanner>)
+                        }
                     </Grid>
                 </Grid>
             </Box>

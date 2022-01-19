@@ -115,6 +115,7 @@ const Navigation = () => {
     }, []);
 
     const cartProducts = useSelector(state => state.product.cart)
+    console.log(cartProducts)
     const [cartCount, setCartCount] = React.useState(0);
 
     React.useEffect(() => {

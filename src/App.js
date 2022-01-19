@@ -7,6 +7,7 @@ import Home from './Pages/Home/Home/Home';
 import Login from './Pages/Login/Login/Login';
 import Register from './Pages/Login/Register/Register';
 import PrivateRoute from './Pages/PrivateRoute/PrivateRoute';
+import Footer from './Pages/Shared/Footer/Footer';
 import Navigation from './Pages/Shared/Navigation/Navigation';
 import SingleProduct from './Pages/SingleProduct/SingleProduct';
 
@@ -33,6 +34,7 @@ function App() {
                         <Route path="/login" element={<Login />} />
                         <Route path="/register" element={<Register />} />
                     </Routes>
+                    <Footer></Footer>
                 </Router>
             </AuthProvider>
         </div>

@@ -3,22 +3,24 @@ import { Container, Grid } from '@mui/material';
 import { Box } from '@mui/system';
 import Product from '../../Product/Product';
 import SectionBanner from '../SectionBanner/SectionBanner';
+import { useSelector } from 'react-redux';
 
 const SmartWatch = () => {
-    const [products, setProducts] = useState([]);
+    const products = useSelector(state => state.product.products);
     const [watch, setWatch] = useState([]);
-
-    useEffect(() => {
-        fetch('./products.json')
-            .then(res => res.json())
-            .then(data => setProducts(data))
-    }, [])
 
     useEffect(() => {
         const newData = products.filter(product => product.category === "smartwatch");
         setWatch(newData);
     }, [products])
 
+    const [banner, setBanner] = useState([]);
+
+    useEffect(() => {
+        fetch('./sectionbanner.json')
+            .then(res => res.json())
+            .then(data => setBanner(data))
+    }, [])
     return (
         <Box sx={{ px: 4 }}>
             <Container>
@@ -31,7 +33,12 @@ const SmartWatch = () => {
             <Box>
                 <Grid container spacing={2}>
                     <Grid item xs={12} sm={6} md={3}>
-                        <SectionBanner></SectionBanner>
+                        {
+                            banner.slice(3, 4).map(item => <SectionBanner
+                                key={item.id}
+                                item={item}
+                            ></SectionBanner>)
+                        }
                     </Grid>
                     <Grid item xs={12} md={9}>
                         <Grid container spacing={1}>

@@ -1,8 +1,10 @@
-export const addToCart = (productId) => {
+export const addToCart = (productId, userEmail) => {
+    console.log(productId, userEmail)
     return {
         type: 'ADD_TO_CART',
         payload: {
-            id: productId
+            id: productId,
+            email: userEmail
         }
     }
 }

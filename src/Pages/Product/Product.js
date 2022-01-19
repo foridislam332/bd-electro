@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
@@ -17,6 +17,7 @@ const Product = ({ product }) => {
     const { id, name, price, listPrice, star, condition, img, img2, img3, description } = product;
     const url = `/product/${id}`;
     const { user } = useAuth();
+    const email = user.email;
 
     const style = {
         position: 'absolute',
@@ -77,7 +78,7 @@ const Product = ({ product }) => {
                     </CardContent>
                     <Box className="card_action">
                         {
-                            user.email ? <Button onClick={() => dispatch(addToCart(id))} className="btn_regular">Add To Cart</Button>
+                            user.email ? <Button onClick={() => dispatch(addToCart(id, user.email))} className="btn_regular">Add To Cart</Button>
                                 :
                                 <Link to="/login">
                                     <Button className="btn_regular">Add To Cart</Button>
@@ -138,7 +139,7 @@ const Product = ({ product }) => {
                                 <Box className="action_box">
                                     <Box className="quantity_box">
                                         {
-                                            user.email ? <Button onClick={() => dispatch(addToCart(id))} className="btn_regular">Add To Cart</Button>
+                                            user.email ? <Button onClick={() => dispatch(addToCart(id, email))} className="btn_regular">Add To Cart</Button>
                                                 :
                                                 <Link to="/login">
                                                     <Button className="btn_regular">Add To Cart</Button>

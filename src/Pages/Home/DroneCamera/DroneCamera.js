@@ -5,13 +5,13 @@ import Product from '../../Product/Product';
 import SectionBanner from '../SectionBanner/SectionBanner';
 import { useSelector } from 'react-redux';
 
-const Phone = () => {
+const DroneCamera = () => {
     const products = useSelector(state => state.product.products);
-    const [phone, setPhone] = useState([]);
+    const [drone, setDrone] = useState([]);
 
     useEffect(() => {
-        const newData = products.filter(product => product.category === "smartphone");
-        setPhone(newData);
+        const newData = products.filter(product => product.category === "cameras");
+        setDrone(newData);
     }, [products])
 
     const [banner, setBanner] = useState([]);
@@ -24,31 +24,31 @@ const Phone = () => {
     return (
         <Box sx={{ px: 4 }}>
             <Container>
-                <Box sx={{ textAlign: 'right' }} className="section_title">
-                    <h1>Smart Phones</h1>
+                <Box className="section_title">
+                    <h1>Deones & Cameras</h1>
                     <br />
-                    <p>Smart Phones with updated stocks</p>
+                    <p>Deones & Cameras with updated stocks</p>
                 </Box>
             </Container>
             <Box>
                 <Grid container spacing={2}>
+                    <Grid item xs={12} sm={6} md={3}>
+                        {
+                            banner.slice(4).map(item => <SectionBanner
+                                key={item.id}
+                                item={item}
+                            ></SectionBanner>)
+                        }
+                    </Grid>
                     <Grid item xs={12} md={9}>
                         <Grid container spacing={1}>
                             {
-                                phone.slice(0, 4).map(product => <Product
+                                drone.slice(0, 4).map(product => <Product
                                     key={product.id}
                                     product={product}
                                 ></Product>)
                             }
                         </Grid>
-                    </Grid>
-                    <Grid item xs={12} sm={6} md={3}>
-                        {
-                            banner.slice(2, 3).map(item => <SectionBanner
-                                key={item.id}
-                                item={item}
-                            ></SectionBanner>)
-                        }
                     </Grid>
                 </Grid>
             </Box>
@@ -56,4 +56,4 @@ const Phone = () => {
     );
 };
 
-export default Phone;
+export default DroneCamera;
