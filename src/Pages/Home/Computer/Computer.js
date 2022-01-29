@@ -22,7 +22,7 @@ const Computer = () => {
             .then(data => setBanner(data))
     }, [])
     return (
-        <Box sx={{ px: 4 }}>
+        <Box sx={{ px: 4, marginTop: '-115px' }}>
             <Container>
                 <Box className="section_title">
                     <h1>Desktop & Laptop</h1>
@@ -34,7 +34,7 @@ const Computer = () => {
                 <Grid container spacing={2}>
                     <Grid item xs={12} sm={6} md={3}>
                         {
-                            banner.slice(4).map(item => <SectionBanner
+                            banner.slice(4, 5).map(item => <SectionBanner
                                 key={item.id}
                                 item={item}
                             ></SectionBanner>)

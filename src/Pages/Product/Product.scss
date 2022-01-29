@@ -2,24 +2,32 @@
     position: relative;
     padding-bottom: 0;
     transform: scale(1);
-    border: 1px solid #845EC2;
+    overflow: visible !important;
+    background-color: #fff !important;
+    border-top: 1px solid #845EC2;
+    border-right: 1px solid #845EC2;
+    border-left: 1px solid #845EC2;
+    border-bottom: 5px solid #845EC2;
+    z-index: inherit;
     
     &:hover{
-        padding-bottom: 115px;
         border-bottom: 4px solid #845EC2;
-        z-index: 999;
         box-shadow: 0 5px 15px 0 #7e4ff89c;
         transition: all .3s ease-in-out;
     }
+    
 
     .badge{
-        color: #fff;
-        background-color: #845EC2;
-        padding: 2px 35px;
+        color: #7c4cf8;
+        font-weight: bold;
+        background-color: #f1f1f1;
+        padding: 2px 15px 4px;
         position: absolute;
-        transform: rotate(-45deg);
-        top: 7px;
-        left: -30px;
+        top: 14px;
+        left: -1px;
+        border: 1px solid #7c4cf8;
+        border-left: 0;
+        border-radius: 0 30px 30px 0;
         z-index: 999;
     }
 
@@ -49,6 +57,7 @@
         a{
             text-decoration: none;
             color: #000;
+            text-shadow: 2px 2px 9px rgba(150, 150, 150, 1);
         }
     }
 
@@ -57,16 +66,24 @@
         font-size: 12px;
         text-transform: uppercase;
         font-weight: bold;
+        text-shadow: 2px 2px 9px rgba(150, 150, 150, 1);
     }
     
     .card_action{
-        flex-direction: column;
-        padding: 0 10px;
         position: absolute;
-        width: 85%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        top: 113%;
+        top: 99%;
+        left: -1px;
+        width: 100%;
+        flex-direction: column;
+        background-color: #fff;
+        transform: scaleY(0);
+        transform-origin: top;
+        border-right: 1px solid #845EC2;
+        border-left: 1px solid #845EC2;
+        border-bottom: 5px solid #845EC2;
+        border-radius: 0 0 5px 5px;
+        z-index: 999 !important;
+        transition: all .3s ease-in-out;
 
         a{
             text-decoration: none !important;
@@ -76,11 +93,14 @@
             width: 100%;
             margin-bottom: 10px;
         }
+
+        .action_box{
+            padding: 10px 20px;
+        }
     }
 
     &:hover .card_action{
-        top: 88%;
-        transition: all .3s ease-in-out;
+        transform: scaleY(1);
     }
 
     &:hover img{

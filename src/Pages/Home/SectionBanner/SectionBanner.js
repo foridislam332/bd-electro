@@ -13,11 +13,11 @@ const SectionBanner = ({ item }) => {
         <>
             <Card className="section_card_banner">
                 <CardContent className="card_content">
-                    <Typography gutterBottom variant="h5" component="div">
+                    <Typography className='s_title' gutterBottom variant="h5" component="div">
                         {name}
                     </Typography>
                     <Typography variant="body2" color="text.secondary">
-                        {description}
+                        {description.slice(0, 90)}...
                     </Typography>
 
                     <Button className="btn_regular">Shop Now</Button>

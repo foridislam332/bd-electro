@@ -4,7 +4,7 @@
         "name": "DJI Mavic Mini - Drone",
         "category": "drone",
         "discount": "15",
-        "img": "https://i.ibb.co/n8DMwk5/drone.jpg",
+        "img": "https://i.ibb.co/xC4SQYJ/d.webp",
         "description": "DJI Mavic Mini - Drone FlyCam Quadcopter UAV with 2.7K Camera 3-Axis Gimbal GPS 30min Flight Time, less than 0.55lbs, Gray"
     },
     {
@@ -12,7 +12,7 @@
         "name": "Skullcandy Hesh 3 Wireless",
         "category": "headphone",
         "discount": "17",
-        "img": "https://i.ibb.co/rbTsqh6/1.png",
+        "img": "https://i.ibb.co/VMz26rc/h.webp",
         "description": "Bluetooth wireless technology. Rapid Charge: 10 Minutes = 4. Hours; 22 Hours of Total Battery Life. Noise isolating fit. Microphone. call, track, and volume control. Collapsible design"
     },
     {
@@ -20,7 +20,7 @@
         "name": "Realme GT Neo 2",
         "category": "smartphone",
         "discount": "25",
-        "img": "https://i.ibb.co/bgxNYvT/slide-1.png",
+        "img": "https://i.ibb.co/BjCZgzf/slide-1.webp",
         "description": "Announced 2021, September 22, Available. Released 2021, September 28, AMOLED, 120Hz, HDR10+, 1300 nits (peak)6.62 inches, 105.8 cm2 (~85.7% screen-to-body ratio) 1080 x 2400 pixels, 20:9 ratio (~398 ppi density)Corning Gorilla Glass 5"
     },
     {
@@ -28,7 +28,7 @@
         "name": "Fitbit Luxe Fitness",
         "category": "smartwatch",
         "discount": "30",
-        "img": "https://i.ibb.co/616CDS9/1.png",
+        "img": "https://i.ibb.co/KFMgygp/1.webp",
         "description": "See how jewelry gets smart with a tracker that doubles as a timeless accessory and features a vibrant color display. Get better sleep to power your days with sleep tracking and sleep Score"
     },
     {
@@ -36,7 +36,15 @@
         "name": "SkyTech Shadow 3.0",
         "category": "computer",
         "discount": "10",
-        "img": "https://i.ibb.co/Xkx6dZh/1.png",
+        "img": "https://i.ibb.co/vh2SNdC/pc.webp",
+        "description": "Ryzen 5 3600 6-Core 3.6GHz (4.2GHz Max Boost) CPU Processor | 500G SSD-Up to 30x Faster Than Traditional HDD. NVIDIA GeForce RTX 2060 6GB GDDR6 Video Card | 16 GB Gaming Memory DDR4 3000 with Heat Spreader | Windows 10 Home 64-bit"
+    },
+    {
+        "id": "06",
+        "name": "Camera Shadow 3.0",
+        "category": "computer",
+        "discount": "10",
+        "img": "https://i.ibb.co/wdPkLQd/c.webp",
         "description": "Ryzen 5 3600 6-Core 3.6GHz (4.2GHz Max Boost) CPU Processor | 500G SSD-Up to 30x Faster Than Traditional HDD. NVIDIA GeForce RTX 2060 6GB GDDR6 Video Card | 16 GB Gaming Memory DDR4 3000 with Heat Spreader | Windows 10 Home 64-bit"
     }
 ]

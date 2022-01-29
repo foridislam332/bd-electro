@@ -76,15 +76,18 @@ const Product = ({ product }) => {
                         <span className="stock">Stock available</span>
                         <span className="price">$ {price}</span>
                     </CardContent>
+
                     <Box className="card_action">
-                        {
-                            user.email ? <Button onClick={() => dispatch(addToCart(id, user.email))} className="btn_regular">Add To Cart</Button>
-                                :
-                                <Link to="/login">
-                                    <Button className="btn_regular">Add To Cart</Button>
-                                </Link>
-                        }
-                        <Button onClick={handleOpen} className="btn_regular">Quick</Button>
+                        <div className="action_box">
+                            {
+                                user.email ? <Button onClick={() => dispatch(addToCart(id))} className="btn_regular">Add To Cart</Button>
+                                    :
+                                    <Link to="/login">
+                                        <Button className="btn_regular">Add To Cart</Button>
+                                    </Link>
+                            }
+                            <Button onClick={handleOpen} className="btn_regular">Quick</Button>
+                        </div>
                     </Box>
                 </Card>
             </Grid>

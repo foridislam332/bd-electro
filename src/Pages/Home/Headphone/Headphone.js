@@ -21,7 +21,7 @@ const Headheadphone = () => {
             .then(data => setBanner(data))
     }, [])
     return (
-        <Box sx={{ px: 4 }}>
+        <Box sx={{ px: 4, marginTop: '-115px' }}>
             <Container>
                 <Box sx={{ textAlign: 'right' }} className="section_title">
                     <h1>Headphones</h1>
@@ -34,7 +34,7 @@ const Headheadphone = () => {
                     <Grid item xs={12} md={9}>
                         <Grid container spacing={1}>
                             {
-                                headphone.map(product => <Product
+                                headphone.slice(0, 4).map(product => <Product
                                     key={product.id}
                                     product={product}
                                 ></Product>)

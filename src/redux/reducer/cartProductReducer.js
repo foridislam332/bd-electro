@@ -16,7 +16,7 @@ const cartProductReducer = (state = initialstate, action) => {
 
             const newState = {
                 ...state,
-                cart: inCart ? state.cart.map(product => product.id === action.payload.id ? { ...product, quan: product.quan + 1, email: action.payload.email } : { ...product, email: action.payload.email }) : [...state.cart, { ...product, quan: 1, email: action.payload.email }]
+                cart: inCart ? state.cart.map(product => product.id === action.payload.id ? { ...product, quan: product.quan + 1, email: action.payload.email } : { ...product }) : [...state.cart, { ...product, quan: 1 }]
             }
 
             return newState;

@@ -24,6 +24,7 @@ import { useSelector } from 'react-redux';
 import useAuth from '../../../Hooks/useAuth';
 
 const Navigation = () => {
+    const { user, logOut } = useAuth();
     const theme = useTheme();
     const useStyle = makeStyles({
         topBar: {
@@ -115,7 +116,6 @@ const Navigation = () => {
     }, []);
 
     const cartProducts = useSelector(state => state.product.cart)
-    console.log(cartProducts)
     const [cartCount, setCartCount] = React.useState(0);
 
     React.useEffect(() => {
@@ -160,7 +160,6 @@ const Navigation = () => {
 
     }, [cartProducts, totalPrice, totalItems, setTotalPrice, setTotalItems]);
 
-    const { user, logOut } = useAuth();
     return (
         <>
             {/* top navbar */}

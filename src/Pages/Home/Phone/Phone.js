@@ -22,7 +22,7 @@ const Phone = () => {
             .then(data => setBanner(data))
     }, [])
     return (
-        <Box sx={{ px: 4 }}>
+        <Box sx={{ px: 4, marginTop: '-115px' }}>
             <Container>
                 <Box sx={{ textAlign: 'right' }} className="section_title">
                     <h1>Smart Phones</h1>

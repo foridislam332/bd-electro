@@ -7,6 +7,9 @@
         div{
             color: #fff;
             font-weight: bold;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            white-space: nowrap;
         }
 
         button{

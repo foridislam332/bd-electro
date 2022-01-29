@@ -22,7 +22,7 @@ const SmartWatch = () => {
             .then(data => setBanner(data))
     }, [])
     return (
-        <Box sx={{ px: 4 }}>
+        <Box sx={{ px: 4, marginTop: '-115px' }}>
             <Container>
                 <Box className="section_title">
                     <h1>Smart Watches</h1>
