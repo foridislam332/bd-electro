@@ -5,17 +5,19 @@
         height: 100%;
     
         .swiper-pagination-progressbar{
-            background-color: #ed174a !important;
+            background-image: linear-gradient(to right, #d16ba5, #c777b9, #ba83ca, #aa8fd8, #9a9ae1, #8aa7ec, #79b3f4, #69bff8, #52cffe, #41dfff, #46eefa, #5ffbf1);
+            height: 8px;
     
             span{
-                background-color: #7c4cf8 !important;
+                background-image: linear-gradient(to left, #d16ba5, #c777b9, #ba83ca, #aa8fd8, #9a9ae1, #8aa7ec, #79b3f4, #69bff8, #52cffe, #41dfff, #46eefa, #5ffbf1);
+                border-radius: 0 50px 50px 0;
             }
         }
     
         .swiper-slide {
             text-align: center;
             font-size: 18px;
-            background: #20b9ff;
+            background-image: linear-gradient(to left, #d16ba5, #c777b9, #ba83ca, #aa8fd8, #9a9ae1, #8aa7ec, #79b3f4, #69bff8, #52cffe, #41dfff, #46eefa, #5ffbf1);
             padding: 40px 0;
             display: -webkit-box;
             display: -ms-flexbox;
@@ -62,7 +64,7 @@
                 left: 50px;
     
                 .special_offer{
-                    background-image: linear-gradient(to right, #7c4cf8, #8d63f9, #9c78fa, #ab8dfa, #baa2f9) !important;
+                    background-image: linear-gradient(to right, #D65DB1, #baa2f900) !important;
                     color: #ffffff !important;
                     padding: 8px 20px;
                     position: relative;
@@ -72,23 +74,6 @@
                     overflow: hidden;
                     display: inline-block;
                     margin-bottom: 20px;
-    
-                    &::after{
-                        content: "";
-                        position: absolute;
-                        height: 100%;
-                        width: 100%;
-                        top: 0;
-                        left: 100%;
-                        background-image: linear-gradient(to left, #7c4cf8, #8d63f9, #9c78fa, #ab8dfa, #baa2f9) !important;
-                        border-radius: 0;
-                        transition: all .2s ease-in-out;
-                        z-index: -1;
-                    }
-    
-                    &:hover:after{
-                        left: 0;
-                    }
                 }
     
                 h3{

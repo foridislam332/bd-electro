@@ -1,47 +1,74 @@
 [
     {
         "id": "01",
-        "name": "Stylish headphone",
-        "price": 499.99,
+        "name": "Skytech Prism II Gaming Computer PC Desktop",
+        "price": 3499.99,
         "condition": "New arrival",
-        "discount": "25",
-        "details": "The Pampas Wireless Over-Ear Headphones from Urbanears feature rich sound reproduction through its 40mm drivers, and a robust built-in battery that can deliver up to 30 hours of playback.",
-        "img": "https://i.ibb.co/KV3SsxH/headphone.png"
+        "discount": "10",
+        "details": "AMD Ryzen 7 5800X 8-Core 3.8 GHz (4.7 GHz Max Boost) CPU | 1TB PCIe Gen4 NVME Internal Solid State Drive. GeForce RTX 3080 Ti 12GB GDDR6X Graphics Card (Brand May Varies) | 16GB DDR4 3200MHz Gaming Memory | Windows 10 Home 64-bit |Showcase Your PC with the Stunning Phanteks Qube Case - White",
+        "img": "https://i.ibb.co/HNC1cZF/1.webp"
     },
     {
         "id": "02",
-        "name": "Realme GT Neo 2",
-        "price": 450.99,
+        "name": " BENGOO G9000 Stereo Gaming Headset for PS4 PC Xbox One PS5 Controller",
+        "price": 20.99,
         "condition": "New arrival",
-        "discount": "17",
-        "details": "50MP AI Camera. All-day Performance. MediaTek Helio G85. 6000mAh Battery.",
-        "img": "https://i.ibb.co/bgxNYvT/slide-1.png"
+        "discount": "28",
+        "details": "Multi-Platform Compatible Support PlayStation 4, New Xbox One, PC, Nintendo 3DS, Laptop, PSP, Tablet, iPad, Computer, Mobile Phone. Please note you need an extra Microsoft Adapter (Not Included) when connect with an old version Xbox One controller.",
+        "img": "https://i.ibb.co/vs23fJG/2.webp"
     },
     {
         "id": "03",
-        "name": "Stylish headphone",
+        "name": "Apple iPhone 12 Pro Max, 256GB, Pacific Blue - Unlocked (Renewed Premium)",
         "price": 499.99,
         "condition": "New arrival",
         "discount": "25",
-        "details": "The Pampas Wireless Over-Ear Headphones from Urbanears feature rich sound reproduction through its 40mm drivers, and a robust built-in battery that can deliver up to 30 hours of playback.",
-        "img": "https://i.ibb.co/KV3SsxH/headphone.png"
+        "details": "Unlocked and compatible with any carrier of choice on GSM and CDMA networks (e.g. AT&T, T-Mobile, Sprint, Verizon, US Cellular, Cricket, Metro, Tracfone, Mint Mobile, etc.).",
+        "img": "https://i.ibb.co/S3yfnpw/3.webp"
     },
     {
         "id": "04",
-        "name": "Stylish headphone",
-        "price": 499.99,
+        "name": "Acer Nitro 5 AN515-55-53E5 Gaming Laptop",
+        "price": 794.99,
         "condition": "New arrival",
-        "discount": "25",
-        "details": "The Pampas Wireless Over-Ear Headphones from Urbanears feature rich sound reproduction through its 40mm drivers, and a robust built-in battery that can deliver up to 30 hours of playback.",
-        "img": "https://i.ibb.co/KV3SsxH/headphone.png"
+        "discount": "15",
+        "details": "Dominate the Game: With the 10th Gen Intel Core i5-10300H processor, your Nitro 5 is packed with incredible power for all your games",
+        "img": "https://i.ibb.co/KzJbRtV/4.webp"
     },
     {
         "id": "05",
-        "name": "Stylish headphone",
-        "price": 499.99,
+        "name": "Apple Watch Series 7 GPS + Cellular, 41mm Blue Aluminum Case with Abyss Blue Sport Band",
+        "price": 70.99,
         "condition": "New arrival",
         "discount": "25",
-        "details": "The Pampas Wireless Over-Ear Headphones from Urbanears feature rich sound reproduction through its 40mm drivers, and a robust built-in battery that can deliver up to 30 hours of playback.",
-        "img": "https://i.ibb.co/KV3SsxH/headphone.png"
+        "details": "Stay connected to family and friends with calls, texts, and email, even when you don't have your phone. Stream music, podcasts, and audiobooks on the go, and leave your phone at home",
+        "img": "https://i.ibb.co/BTMPM8R/5.webp"
+    },
+    {
+        "id": "06",
+        "name": "HP DeskJet 3755 Compact All-in-One Wireless Printer, HP Instant Ink, Works with Alexa",
+        "price": 2299.99,
+        "condition": "New arrival",
+        "discount": "05",
+        "details": "Main functions of this HP DeskJet 3755 (3700 series) compact printer: copy, scan, wireless printing, AirPrint, Instant Ink ready so you'll never run out of ink. The power of your printer in the palm of your hand: The HP Smart app allows you to easily set up your printer, scan from your smartphone, order toner, and print from the cloud—such as iCloud, Dropbox and Google Drive",
+        "img": "https://i.ibb.co/f02nKKL/6.webp"
+    },
+    {
+        "id": "07",
+        "name": "Amazon eero Pro mesh WiFi router",
+        "price": 159.99,
+        "condition": "New arrival",
+        "discount": "16",
+        "details": "eero Pro router/extender - The Amazon eero Pro mesh router replaces your traditional WiFi router. A single eero Pro is a perfect start for any home and can be paired with another eero Pro or eero Beacon to quickly add coverage as needed. eero Pro is backwards compatible with 1st generation eero routers.",
+        "img": "https://i.ibb.co/F5XNCJy/7.webp"
+    },
+    {
+        "id": "08",
+        "name": "KODAK PIXPRO Astro Zoom AZ421-WH 16MP Digital Camera with 42X Optical Zoom and 3inche LCD Screen (White)",
+        "price": 195.77,
+        "condition": "New arrival",
+        "discount": "20",
+        "details": "Powerful 16. 1-Megapixel CCD sensor gives you room to enlarge, zoom and crop to your heart's content without losing out on life-like clarity or quality. 42x optical zoom and a 24mm wide angle lens Moves you closer to the subject and fit more into every frame.",
+        "img": "https://i.ibb.co/sgCRZyC/8.webp"
     }
 ]
