@@ -1,4 +1,5 @@
-import { Box, Grid } from '@mui/material';
+import { Box, Grid, useTheme } from '@mui/material';
+import { makeStyles } from '@mui/styles';
 import React, { useEffect, useState } from 'react';
 import TopCategorie from './TopCategorie/TopCategorie';
 
@@ -10,8 +11,17 @@ const TopCategories = () => {
             .then(data => setCategories(data))
     }, [])
 
+    const theme = useTheme();
+    const useStyle = makeStyles({
+        topCategoryBox: {
+            [theme.breakpoints.down('sm')]: {
+                padding: '0 !important'
+            }
+        }
+    })
+    const { topCategoryBox } = useStyle();
     return (
-        <Box sx={{ mt: 4, px: 4, mb: 8 }}>
+        <Box className={topCategoryBox} sx={{ mt: 4, px: 4, mb: 8 }}>
             <Grid container spacing={4}>
                 {
                     categories.map(item => <TopCategorie

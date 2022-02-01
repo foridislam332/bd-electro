@@ -19,9 +19,18 @@ import { Link } from 'react-router-dom';
 import { makeStyles } from '@mui/styles';
 
 import './Categories.scss'
+import { useTheme } from '@mui/material';
 
 const Categories = () => {
+    const theme = useTheme();
     const useStyle = makeStyles({
+        bannerCategory: {
+            borderRadius: '15px',
+            background: '#fff',
+            [theme.breakpoints.down('md')]: {
+                display: 'none !important'
+            }
+        },
         iconsStyle: {
             display: 'flex',
             alignItems: 'center',
@@ -29,14 +38,14 @@ const Categories = () => {
         }
     });
 
-    const { iconsStyle } = useStyle();
+    const { bannerCategory, iconsStyle } = useStyle();
 
     return (
-        <Box className="bg_primary" sx={{ width: '100%', maxWidth: 360 }}>
+        <Box className={bannerCategory} sx={{ width: '100%', maxWidth: 360 }}>
             <nav aria-label="main mailbox folders">
                 <List>
                     <ListItem disablePadding>
-                        <Link className="nav_link" to="/categories">
+                        <Link className="nav_link" to="/AllCategories">
                             <ListItemButton>
                                 <ListItemIcon className={iconsStyle}>
                                     <MenuIcon />
@@ -62,7 +71,7 @@ const Categories = () => {
                     </ListItem>
 
                     <ListItem disablePadding>
-                        <Link className="nav_link" to="/computer">
+                        <Link className="nav_link" to={`/allCategories/computer`}>
                             <ListItemButton>
                                 <ListItemIcon className={iconsStyle}>
                                     <ComputerIcon />
@@ -73,7 +82,7 @@ const Categories = () => {
                     </ListItem>
 
                     <ListItem disablePadding>
-                        <Link className="nav_link" to="/phones">
+                        <Link className="nav_link" to={`/allCategories/smartphone`}>
                             <ListItemButton>
                                 <ListItemIcon className={iconsStyle}>
                                     <PhoneIphoneIcon />
@@ -84,7 +93,7 @@ const Categories = () => {
                     </ListItem>
 
                     <ListItem disablePadding>
-                        <Link className="nav_link" to="/cameras">
+                        <Link className="nav_link" to={`/allCategories/cameras`}>
                             <ListItemButton>
                                 <ListItemIcon className={iconsStyle}>
                                     <CameraswitchOutlinedIcon />
@@ -95,7 +104,7 @@ const Categories = () => {
                     </ListItem>
 
                     <ListItem disablePadding>
-                        <Link className="nav_link" to="/headphones">
+                        <Link className="nav_link" to={`/allCategories/headphone`}>
                             <ListItemButton>
                                 <ListItemIcon className={iconsStyle}>
                                     <HeadphonesOutlinedIcon />
@@ -106,7 +115,7 @@ const Categories = () => {
                     </ListItem>
 
                     <ListItem disablePadding>
-                        <Link className="nav_link" to="/watches">
+                        <Link className="nav_link" to={`/allCategories/smartwatch`}>
                             <ListItemButton>
                                 <ListItemIcon className={iconsStyle}>
                                     <WatchOutlinedIcon />
@@ -117,7 +126,7 @@ const Categories = () => {
                     </ListItem>
 
                     <ListItem disablePadding>
-                        <Link className="nav_link" to="/networking">
+                        <Link className="nav_link" to={`/allCategories/networking`}>
                             <ListItemButton>
                                 <ListItemIcon className={iconsStyle}>
                                     <RouterOutlinedIcon />
@@ -128,7 +137,7 @@ const Categories = () => {
                     </ListItem>
 
                     <ListItem disablePadding>
-                        <Link className="nav_link" to="/officeElectro">
+                        <Link className="nav_link" to={`/allCategories/officeElectro`}>
                             <ListItemButton>
                                 <ListItemIcon className={iconsStyle}>
                                     <HomeWorkOutlinedIcon />

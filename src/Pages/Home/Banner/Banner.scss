@@ -76,27 +76,36 @@
                     margin-bottom: 20px;
                 }
     
-                h3{
-                    color: #ffffff;
-                    text-transform: capitalize;
-                }
-    
                 p{
                     color: #464545;
                 }
     
                 .slide_text_bottom{
-                    margin-top: 30px;
-                    display: flex;
-                    align-items: center;
-                    justify-content: space-between;
-                    max-width: 40%;
-    
                         span{
                             font-size: 20px;
                         }
                 }
             }
         }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .special_offer{
+        font-size: 20px !important;
+        margin-bottom: 10px !important;
+    }
+    .slide_img{
+        padding: 20px !important;
+
+    }
+    
+    .bannerPrice{
+        font-size: 14px !important;
+    }
+
+    .banner_box .btn_regular{
+        font-size: 12px !important;
+        padding: 7px 15px;
     }
 }

@@ -1,6 +1,7 @@
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import './App.scss';
 import AuthProvider from './Context/AuthProvider/AuthProvider';
+import AllCategories from './Pages/AllCategories/AllCategories';
 import Carts from './Pages/Carts/Carts';
 import CheckOut from './Pages/CheckOut/CheckOut';
 import Home from './Pages/Home/Home/Home';
@@ -21,6 +22,7 @@ function App() {
                         <Route exact path="/" element={<Home />} />
                         <Route path="/home" element={<Home />} />
                         <Route path="/product/:productId" element={<SingleProduct />} />
+                        <Route path="/allCategories/:categoryName" element={<AllCategories />} />
                         <Route path="/carts" element={
                             <PrivateRoute>
                                 <Carts />

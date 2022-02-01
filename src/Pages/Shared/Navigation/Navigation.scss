@@ -72,3 +72,25 @@
         }
     }
 }
+
+.css-1160xiw-MuiPaper-root-MuiDrawer-paper{
+    background-image: linear-gradient(to top, #d65db1, #c55cb7, #b15dbc, #9c5dc0, #845ec2);
+}
+
+.res_link{
+    color: #fff !important;
+    text-decoration: none;
+}
+
+.res_cart{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #5f3abf;
+}
+
+.res_price{
+    color: #1d1b1c !important;
+    font-weight: bold;
+    text-shadow: 2px 2px 9px #302f2fa1;
+}

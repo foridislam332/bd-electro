@@ -77,32 +77,6 @@ const Navigation = () => {
 
     const [state, setState] = React.useState(false);
 
-    const list = (
-        <Box
-            sx={{ width: 250 }}
-            role="presentation"
-        >
-            <List>
-                <ListItem button>
-                    <ListItemText>
-                        <Link className={navLink} to="/home"><Button color="inherit">Home</Button></Link>
-                    </ListItemText>
-                </ListItem>
-                <Divider />
-                <ListItem button>
-                    <ListItemText>
-                        <Link className={navLink} to="/shop"><Button color="inherit">Shop</Button></Link>
-                    </ListItemText>
-                </ListItem>
-                <Divider />
-                <ListItem button>
-                    <ListItemText>
-                        <Link className={navLink} to="/collection"><Button color="inherit">Collection</Button></Link>
-                    </ListItemText>
-                </ListItem>
-            </List>
-        </Box>
-    );
 
     const [navPosition, setnavPosition] = React.useState("static !important");
     const listenScrollEvent = () => {
@@ -159,6 +133,72 @@ const Navigation = () => {
         setGrandTotal(price + delivery)
 
     }, [cartProducts, totalPrice, totalItems, setTotalPrice, setTotalItems]);
+
+    const list = (
+        <Box
+            sx={{ width: 250 }}
+            role="presentation"
+        >
+            <List>
+                <ListItem button>
+                    <ListItemText>
+                        <Link className="res_link" to="/">
+                            <Typography variant="h4" component="div" sx={{ flexGrow: 1, fontWeight: 'bold', color: '#fff', textAlign: 'center' }}>
+                                <span style={{ color: 'red' }}>B</span><span style={{ color: 'green' }}>D</span> Electro
+                            </Typography>
+                        </Link>
+                    </ListItemText>
+                </ListItem>
+                <Divider />
+                <ListItem button>
+                    <ListItemText>
+                        <Link className="res_link" to="/">My Account</Link>
+                    </ListItemText>
+                </ListItem>
+                <Divider />
+                <ListItem button>
+                    <ListItemText>
+                        <Link className="res_link" to="/">Home</Link>
+                    </ListItemText>
+                </ListItem>
+                <Divider />
+                <ListItem button>
+                    <ListItemText>
+                        <Link className="res_link" to="/categories">Categories</Link>
+                    </ListItemText>
+                </ListItem>
+                <Divider />
+                <ListItem button>
+                    <ListItemText>
+                        <Link className="res_link" to="/allProducts">All Prooducts</Link>
+                    </ListItemText>
+                </ListItem>
+                <Divider />
+
+                <ListItem button>
+                    <ListItemText>
+                        <Link className="res_link" to="/contact">Contact Us</Link>
+                    </ListItemText>
+                </ListItem>
+
+                <Divider />
+                <ListItem button>
+                    <ListItemText>
+                        <Box className='res_cart'>
+                            <p className='res_price'>Total: <span>$ {grandTotal.toFixed(2)}</span></p>
+                            <Link className={navLink} to="/carts">
+                                <IconButton size="large" aria-label="show 4 new mails" color="inherit">
+                                    <Badge badgeContent={cartCount} color="error">
+                                        <ShoppingCartOutlinedIcon />
+                                    </Badge>
+                                </IconButton>
+                            </Link>
+                        </Box>
+                    </ListItemText>
+                </ListItem>
+            </List>
+        </Box>
+    );
 
     return (
         <>
@@ -236,7 +276,11 @@ const Navigation = () => {
                         <Toolbar className={navBar}>
                             <Box>
                                 <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-                                    <Link className={navLink} to="/">BD-Electro</Link>
+                                    <Link className={navLink} to="/">
+                                        <Typography variant="h4" component="div" sx={{ flexGrow: 1, fontWeight: 'bold', color: '#fff', textAlign: 'center' }}>
+                                            <span style={{ color: 'red' }}>B</span><span style={{ color: 'green' }}>D</span> Electro
+                                        </Typography>
+                                    </Link>
                                 </Typography>
                             </Box>
 
@@ -272,7 +316,7 @@ const Navigation = () => {
                 </AppBar>
             </Box>
             {/* responsive navbar */}
-            <Box>
+            <Box className='responsive_navigation'>
                 <React.Fragment>
                     <Drawer
                         open={state}

@@ -17,8 +17,8 @@ const Footer = () => {
                 <Grid container spacing={2}>
                     <Grid item xs={12} md={3}>
                         <Box>
-                            <Typography variant="h4" component="div" sx={{ flexGrow: 1 }}>
-                                BD-Electro
+                            <Typography variant="h4" component="div" sx={{ flexGrow: 1, fontWeight: 'bold', color: '#fff' }}>
+                                <span style={{ color: 'red' }}>B</span><span style={{ color: 'green' }}>D</span> Electro
                             </Typography>
                             <Typography variant="body1">
                                 Adipisci asperiores ipsum ipsa repellat consequatur repudiandae quisquam assumenda dolor perspiciatis sit ipsum dolor amet.
@@ -110,11 +110,6 @@ const Footer = () => {
                 </Box>
             </Container>
         </Box>
-
-
-
-
-
     );
 };
 

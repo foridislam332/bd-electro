@@ -1,4 +1,4 @@
-import { Button, Container, Grid, Typography } from '@mui/material';
+import { Button, Container, Grid, Typography, useTheme } from '@mui/material';
 import { Box } from '@mui/system';
 import React, { useEffect, useState } from 'react';
 import './Banner.scss'
@@ -16,6 +16,7 @@ import SwiperCore, {
     Pagination, Navigation, Autoplay
 } from 'swiper';
 import Categories from './Categories/Categories';
+import { makeStyles } from '@mui/styles';
 
 // install Swiper modules
 SwiperCore.use([Pagination, Navigation, Autoplay]);
@@ -28,6 +29,46 @@ const Banner = () => {
             .then(res => res.json())
             .then(data => setSlider(data))
     }, [])
+
+    const theme = useTheme();
+    const useStyle = makeStyles({
+        bannerTitle: {
+            color: '#fff',
+            textTransform: 'capitalize',
+            width: '60%',
+            fontSize: '30px',
+            [theme.breakpoints.down('sm')]: {
+                fontSize: '5vw !important',
+                textOverflow: 'ellipsis',
+                overflow: 'hidden',
+                whiteSpace: 'nowrap',
+                width: '50% !important',
+            }
+        },
+        bannerText: {
+            [theme.breakpoints.down('sm')]: {
+                fontSize: '12px !important'
+            }
+        },
+        bannerBottomText: {
+            marginTop: '30px',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'space-between',
+            maxWidth: '40%',
+            [theme.breakpoints.down('sm')]: {
+                maxWidth: '50%',
+                marginTop: '12px !important'
+            }
+        },
+        removePadding: {
+            [theme.breakpoints.down('sm')]: {
+                padding: '0px !important'
+            }
+        }
+    });
+
+    const { bannerTitle, bannerText, bannerBottomText, removePadding } = useStyle();
 
     return (
         <Container sx={{ mt: 4 }}>
@@ -48,18 +89,12 @@ const Banner = () => {
                                                 <Box className="slide_content">
                                                     <Typography className="special_offer" variant="h5">{slide.discount}% Special Offer</Typography>
 
-                                                    <Typography sx={{ py: 1, width: '60%' }} variant="h3">{slide.name.slice(0, 30)}..</Typography>
+                                                    <Typography className={bannerTitle} variant="h3">{slide.name.slice(0, 30)}..</Typography>
 
-                                                    <Typography sx={{ width: '45%' }} variant="body2">{slide.details.slice(0, 115)}...</Typography>
+                                                    <Typography className={bannerText} sx={{ width: '50%' }} variant="body2">{slide.details.slice(0, 115)}...</Typography>
 
-                                                    {/* <Box className="offer_style">
-                                                        <Typography variant="body2">
-                                                            <span className="up_span">up to</span> <p>{slide.discount}%</p> <span className="down_span">off</span>
-                                                        </Typography>
-                                                    </Box> */}
-
-                                                    <Box className="slide_text_bottom">
-                                                        <span className="price">$ {slide.price}</span>
+                                                    <Box className={bannerBottomText}>
+                                                        <span className="price bannerPrice">$ {slide.price}</span>
                                                         <Button className="btn_regular">Shop Now</Button>
                                                     </Box>
                                                 </Box>
